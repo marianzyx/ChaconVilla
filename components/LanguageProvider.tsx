@@ -4,10 +4,13 @@ import React, { createContext, useContext, useMemo, useState } from "react";
 import type { Lang } from "../lib/i18n";
 import { translations } from "../lib/i18n";
 
+// Tipul corect: obiectul de traduceri pentru o limbă (en SAU es)
+type TranslationShape = (typeof translations)[Lang];
+
 type LanguageContextValue = {
   lang: Lang;
   setLang: (lang: Lang) => void;
-  t: typeof translations.en;
+  t: TranslationShape;
 };
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
@@ -15,7 +18,7 @@ const LanguageContext = createContext<LanguageContextValue | null>(null);
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [lang, setLang] = useState<Lang>("en");
 
-  const value = useMemo(() => {
+  const value = useMemo<LanguageContextValue>(() => {
     return {
       lang,
       setLang,
