@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /*light mode */
+  --bg: #f5f3ee;
+  --bg-2: #efe7dc;
+  --text: #2f2a25;
+  --muted: #6b625b;
+  --border: rgba(47, 42, 37, 0.12);
+
+  --accent: #6b8e23; /* olive */
+  --accent-2: #c26d3a; /* terra-cotta */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Dark mode (manual, prin clasa .dark pe <html>) */
+.dark {
+  --bg: #1c1a18;
+  --bg-2: #23201d;
+  --text: #edeae4;
+  --muted: #b8b1a8;
+  --border: rgba(237, 234, 228, 0.14);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --accent: #90a955;
+  --accent-2: #d08a5a;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+}
+
+/* Smooth scrolling între secțiuni (one-page) */
+html {
+  scroll-behavior: smooth;
 }
