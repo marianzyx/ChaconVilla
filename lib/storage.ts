@@ -7,13 +7,13 @@ const KV_KEY = "chaconvilla_bookings";
 async function kv() {
   const { Redis } = await import("@upstash/redis");
   return new Redis({
-    url: process.env.UPSTASH_REDIS_REST_URL!,
-    token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+    url: process.env.KV_REST_API_URL!,
+    token: process.env.KV_REST_API_TOKEN!,
   });
 }
 
 export async function getBookings(): Promise<BookingData> {
-  if (!process.env.UPSTASH_REDIS_REST_URL) return DEFAULT;
+  if (!process.env.KV_REST_API_URL) return DEFAULT;
   try {
     const store = await kv();
     return (await store.get<BookingData>(KV_KEY)) ?? DEFAULT;
