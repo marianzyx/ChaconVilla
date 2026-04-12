@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import { LanguageProvider, useLanguage } from "./LanguageProvider";
 import {useState} from "react";
 import HousePhotosModal from "./HousePhotosModal";
+import AvailabilityCalendar from "./AvailabilityCalendar";
 
 
 function HomeContent() {
@@ -294,6 +295,7 @@ const largeInteriorImages = [
                 <div className="rounded-xl border border-[var(--border)] bg-[var(--bg-2)] p-4">{t.pricing.parking}</div>
                 <div className="rounded-xl border border-[var(--border)] bg-[var(--bg-2)] p-4">{t.pricing.furnished}</div>
                 <div className="rounded-xl border border-[var(--border)] bg-[var(--bg-2)] p-4">{t.pricing.bathroom}</div>
+                <div className="rounded-xl border border-[var(--border)] bg-[var(--bg-2)] p-4">{t.pricing.petFriendly}</div>
               </div>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -358,6 +360,17 @@ const largeInteriorImages = [
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* AVAILABILITY */}
+      <section id="availability" className="py-24 px-6">
+        <div className="mx-auto max-w-6xl">
+          <div className="max-w-3xl mb-12">
+            <h2 className="text-3xl md:text-4xl mb-4">{t.availability.title}</h2>
+            <p className="text-[var(--muted)] leading-relaxed">{t.availability.subtitle}</p>
+          </div>
+          <AvailabilityCalendar />
         </div>
       </section>
 

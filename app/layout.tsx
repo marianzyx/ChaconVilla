@@ -36,7 +36,7 @@ export default function RootLayout({
       lang="en"
       className={`${lora.variable} ${nunito.variable}`}
     >
-      <body>{children}</body>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }

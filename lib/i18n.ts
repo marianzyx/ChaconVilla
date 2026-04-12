@@ -61,6 +61,7 @@ export const translations = {
       parking: "Parking",
       furnished: "Fully furnished house",
       bathroom: "Private bathroom",
+      petFriendly: "Pet friendly",
       askOffer: "Ask for an offer",
       extrasTitle: "Extra options",
       extrasSubtitle: "Optional services, available on request.",
@@ -73,6 +74,12 @@ export const translations = {
       viewInterior: "View interior photos",
       smallInteriorTitle: "Small house - interior",
       largeInteriorTitle: "Large house - interior",
+    },
+    availability: {
+      title: "Availability",
+      subtitle: "Select a house to see available dates. Booked periods are grayed out.",
+      available: "Available",
+      booked: "Booked",
     },
     gallery: {
       title: "Gallery",
@@ -170,6 +177,7 @@ export const translations = {
       parking: "Parking",
       furnished: "Casa totalmente equipada",
       bathroom: "Baño privado",
+      petFriendly: "Admite mascotas",
       askOffer: "Pedir una oferta",
       extrasTitle: "Opciones extra",
       extrasSubtitle: "Servicios opcionales bajo solicitud.",
@@ -182,6 +190,12 @@ export const translations = {
       viewInterior: "Ver fotos del interior",
       smallInteriorTitle: "Casa pequeña - interior",
       largeInteriorTitle: "Casa grande - interior",
+    },
+    availability: {
+      title: "Disponibilidad",
+      subtitle: "Selecciona una casa para ver las fechas disponibles. Los períodos reservados aparecen en gris.",
+      available: "Disponible",
+      booked: "Reservado",
     },
     gallery: {
       title: "Galería",
