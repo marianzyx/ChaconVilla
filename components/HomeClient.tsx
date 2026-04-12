@@ -16,9 +16,16 @@ const [openLarge, setOpenLarge] = useState(false);
 
 // Placeholder images (you will replace them later)
 const smallInteriorImages = [
-  { src: "/images/interiors/small-1.jpg", alt: "Small house interior photo 1" },
-  { src: "/images/interiors/small-2.jpg", alt: "Small house interior photo 2" },
-  { src: "/images/interiors/small-3.jpg", alt: "Small house interior photo 3" },
+  { src: "/images/interiors/small1.jpg", alt: "Small house interior photo 1" },
+  { src: "/images/interiors/small2.jpg", alt: "Small house interior photo 2" },
+  { src: "/images/interiors/small3.jpg", alt: "Small house interior photo 3" },
+  { src: "/images/interiors/small4.jpg", alt: "Small house interior photo 4" },
+  { src: "/images/interiors/small5.jpg", alt: "Small house interior photo 5" },
+  { src: "/images/interiors/small6.jpg", alt: "Small house interior photo 6" },
+  { src: "/images/interiors/small7.jpg", alt: "Small house interior photo 7" },
+  { src: "/images/interiors/small8.jpg", alt: "Small house interior photo 8" },
+  { src: "/images/interiors/small9.jpg", alt: "Small house interior photo 9" },
+  { src: "/images/interiors/small10.jpg", alt: "Small house interior photo 10" },
 ];
 
 const largeInteriorImages = [
