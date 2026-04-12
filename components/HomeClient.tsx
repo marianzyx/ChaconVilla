@@ -95,36 +95,54 @@ const largeInteriorImages = [
       {/* ABOUT */}
       <section id="about" className="py-24 px-6">
         <div className="mx-auto max-w-6xl">
-          <div className="flex flex-col md:flex-row items-center gap-12">
+          {/* Intro row */}
+          <div className="flex flex-col md:flex-row items-start gap-12 mb-16">
             <div className="md:w-1/2">
               <h2 className="text-3xl md:text-4xl mb-6">{t.about.title}</h2>
-
-              <p className="text-[var(--muted)] mb-6 leading-relaxed">
-                {t.about.p1}
-              </p>
-
-              <p className="text-[var(--muted)] mb-8 leading-relaxed">
-                {t.about.p2}
-              </p>
-
-              <ul className="space-y-3 text-[var(--text)]">
-                <li className="text-[var(--muted)]">{t.about.li1}</li>
-                <li className="text-[var(--muted)]">{t.about.li2}</li>
-                <li className="text-[var(--muted)]">{t.about.li3}</li>
-                <li className="text-[var(--muted)]">{t.about.li4}</li>
-              </ul>
+              <p className="text-[var(--muted)] leading-relaxed">{t.about.intro}</p>
             </div>
-
             <div className="md:w-1/2">
-              <div className="relative w-full h-[300px] md:h-[420px] rounded-2xl overflow-hidden shadow-lg group">
+              <div className="relative w-full h-[300px] md:h-95 rounded-2xl overflow-hidden shadow-lg group">
                 <Image
                   src="/images/about/about.jpg"
-                  alt="Accommodation near Playas de Chacón"
+                  alt="Ebro Relax Homes"
                   fill
                   sizes="(min-width: 768px) 50vw, 100vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
+            </div>
+          </div>
+
+          {/* Detail cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="rounded-2xl border border-(--border) bg-(--bg-2) p-6">
+              <h3 className="text-lg font-semibold mb-4">🏡 {t.about.housesTitle}</h3>
+              <ul className="space-y-3 text-sm text-(--muted) leading-relaxed">
+                <li>{t.about.house1}</li>
+                <li>{t.about.house2}</li>
+              </ul>
+              <p className="text-sm text-(--muted) leading-relaxed mt-4">{t.about.housesBoth}</p>
+            </div>
+
+            <div className="rounded-2xl border border-(--border) bg-(--bg-2) p-6">
+              <h3 className="text-lg font-semibold mb-4">🌞 {t.about.outdoorTitle}</h3>
+              <p className="text-sm text-(--muted) mb-3">{t.about.outdoorIntro}</p>
+              <ul className="space-y-2 text-sm text-(--muted) leading-relaxed list-disc list-inside">
+                <li>{t.about.outdoor1}</li>
+                <li>{t.about.outdoor2}</li>
+                <li>{t.about.outdoor3}</li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-(--border) bg-(--bg-2) p-6">
+              <h3 className="text-lg font-semibold mb-4">🚤 {t.about.boatTitle}</h3>
+              <p className="text-sm text-(--muted) leading-relaxed">{t.about.boatText}</p>
+            </div>
+
+            <div className="rounded-2xl border border-(--border) bg-(--bg-2) p-6">
+              <h3 className="text-lg font-semibold mb-4">🌅 {t.about.expTitle}</h3>
+              <p className="text-sm text-(--muted) leading-relaxed">{t.about.expText}</p>
             </div>
           </div>
         </div>
@@ -267,7 +285,7 @@ const largeInteriorImages = [
                 </div>
                 <div className="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4">
                   <p className="text-xs text-[var(--muted)]">{t.pricing.minStay}</p>
-                  <p className="text-lg font-semibold">3</p>
+                  <p className="text-lg font-semibold">2</p>
                 </div>
               </div>
               <div className="mt-6">
@@ -397,7 +415,7 @@ const largeInteriorImages = [
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div className="rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-6 md:p-8">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
                 <a
                   href="tel:+34617266646"
                   className="rounded-2xl border border-[var(--border)] bg-[var(--bg-2)] p-5 hover:brightness-[0.98] transition"
@@ -416,6 +434,15 @@ const largeInteriorImages = [
                   <p className="text-sm text-[var(--muted)] mb-2">{t.contact.whatsapp}</p>
                   <p className="text-xl font-semibold">{t.contact.messageUs}</p>
                   <p className="text-sm text-[var(--muted)] mt-2">{t.contact.fastReplies}</p>
+                </a>
+
+                <a
+                  href="mailto:ebrorelaxhomes@gmail.com"
+                  className="rounded-2xl border border-[var(--border)] bg-[var(--bg-2)] p-5 hover:brightness-[0.98] transition"
+                >
+                  <p className="text-sm text-[var(--muted)] mb-2">{t.contact.emailLabel}</p>
+                  <p className="text-xl font-semibold break-all">ebrorelaxhomes@gmail.com</p>
+                  <p className="text-sm text-[var(--muted)] mt-2">{t.contact.emailUs}</p>
                 </a>
               </div>
 
@@ -500,14 +527,14 @@ const largeInteriorImages = [
       </section>
 <HousePhotosModal
   open={openSmall}
-  title="Small house - interior"
+  title={t.pricing.smallInteriorTitle}
   images={smallInteriorImages}
   onClose={() => setOpenSmall(false)}
 />
 
 <HousePhotosModal
   open={openLarge}
-  title="Large house - interior"
+  title={t.pricing.largeInteriorTitle}
   images={largeInteriorImages}
   onClose={() => setOpenLarge(false)}
 />
