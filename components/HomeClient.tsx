@@ -28,6 +28,7 @@ const largeInteriorImages = [
   { src: "/images/interiors/large4.jpg", alt: "Large house - living and kitchen" },
   { src: "/images/interiors/large5.jpg", alt: "Large house - dining area" },
   { src: "/images/interiors/large6.jpg", alt: "Large house - exterior" },
+  { src: "/images/interiors/large7.jpg", alt: "Large house - toilet" },
 ];
 
 

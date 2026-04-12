@@ -59,10 +59,6 @@ export default function HousePhotosModal({ open, title, images, onClose }: Props
             ))}
           </div>
 
-          <p className="text-xs text-[var(--muted)] mt-4">
-            Tip: replace these placeholder paths with your real interior photos in{" "}
-            <span className="font-semibold">public/images/interiors/</span>.
-          </p>
         </div>
       </div>
     </div>
