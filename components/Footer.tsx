@@ -47,14 +47,14 @@ export default function Footer() {
 
             <div className="space-y-3 text-sm">
               <a
-                href="tel:0758518805"
+                href="tel:+34617266646"
                 className="block text-(--muted) hover:text-(--text) transition"
               >
-                {t.contact.phone}: 0758 518 805
+                {t.contact.phone}: +34 617 266 646
               </a>
 
               <a
-                href="https://wa.me/40758518805"
+                href="https://wa.me/34617266646"
                 target="_blank"
                 rel="noreferrer"
                 className="block text-(--muted) hover:text-(--text) transition"

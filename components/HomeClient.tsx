@@ -22,9 +22,12 @@ const smallInteriorImages = [
 ];
 
 const largeInteriorImages = [
-  { src: "/images/interiors/large-1.jpg", alt: "Large house interior photo 1" },
-  { src: "/images/interiors/large-2.jpg", alt: "Large house interior photo 2" },
-  { src: "/images/interiors/large-3.jpg", alt: "Large house interior photo 3" },
+  { src: "/images/interiors/large1.jpg", alt: "Large house - master bedroom" },
+  { src: "/images/interiors/large2.jpg", alt: "Large house - bathroom" },
+  { src: "/images/interiors/large3.jpg", alt: "Large house - twin bedroom" },
+  { src: "/images/interiors/large4.jpg", alt: "Large house - living and kitchen" },
+  { src: "/images/interiors/large5.jpg", alt: "Large house - dining area" },
+  { src: "/images/interiors/large6.jpg", alt: "Large house - exterior" },
 ];
 
 
@@ -388,16 +391,16 @@ const largeInteriorImages = [
             <div className="rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-6 md:p-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 <a
-                  href="tel:0758518805"
+                  href="tel:+34617266646"
                   className="rounded-2xl border border-[var(--border)] bg-[var(--bg-2)] p-5 hover:brightness-[0.98] transition"
                 >
                   <p className="text-sm text-[var(--muted)] mb-2">{t.contact.phone}</p>
-                  <p className="text-xl font-semibold">0758 518 805</p>
+                  <p className="text-xl font-semibold">+34 617 266 646</p>
                   <p className="text-sm text-[var(--muted)] mt-2">{t.contact.tapToCall}</p>
                 </a>
 
                 <a
-                  href="https://wa.me/40758518805"
+                  href="https://wa.me/34617266646"
                   target="_blank"
                   rel="noreferrer"
                   className="rounded-2xl border border-[var(--border)] bg-[var(--bg-2)] p-5 hover:brightness-[0.98] transition"
