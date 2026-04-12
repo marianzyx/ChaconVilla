@@ -30,7 +30,7 @@ export default function Navbar() {
       <nav className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
         {/* Brand */}
         <a href="#hero" className="font-semibold tracking-wide">
-          Chacón Villa
+          Ebro Relax Homes
         </a>
 
         {/* Desktop menu */}

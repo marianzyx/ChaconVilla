@@ -21,7 +21,7 @@ const nunito = Nunito({
  * Mai târziu completăm cu OpenGraph, icons etc.
  */
 export const metadata: Metadata = {
-  title: "Chacón Villa | Fishing Retreat",
+  title: "Ebro Relax Homes | Fishing Retreat",
   description:
     "A quiet fishing retreat near Playas de Chacón, Caspe (Zaragoza). Nature, comfort, and unforgettable sunsets by the lake.",
 };

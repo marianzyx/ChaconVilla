@@ -11,7 +11,7 @@ export const translations = {
       cta: "Call to book",
     },
     hero: {
-      title: "Chacón Villa",
+      title: "Ebro Relax Homes",
       subtitle: "A calm stay near Playas de Chacón, close to Caspe (Zaragoza).",
       cta1: "Call to book",
       cta2: "View gallery",
@@ -126,7 +126,7 @@ export const translations = {
       cta: "Llamar para reservar",
     },
     hero: {
-      title: "Chacón Villa",
+      title: "Ebro Relax Homes",
       subtitle:
         "Una estancia tranquila cerca de Playas de Chacón, junto a Caspe (Zaragoza).",
       cta1: "Llamar para reservar",

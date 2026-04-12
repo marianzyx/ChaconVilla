@@ -199,11 +199,7 @@ const largeInteriorImages = [
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <div className="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4">
-                  <p className="text-xs text-[var(--muted)]">{t.pricing.oneNight}</p>
-                  <p className="text-lg font-semibold">€70</p>
-                </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4">
                   <p className="text-xs text-[var(--muted)]">{t.pricing.weekend}</p>
                   <p className="text-lg font-semibold">€260</p>
@@ -253,11 +249,7 @@ const largeInteriorImages = [
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <div className="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4">
-                  <p className="text-xs text-[var(--muted)]">{t.pricing.oneNight}</p>
-                  <p className="text-lg font-semibold">€90</p>
-                </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4">
                   <p className="text-xs text-[var(--muted)]">{t.pricing.weekend}</p>
                   <p className="text-lg font-semibold">€300</p>

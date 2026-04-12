@@ -80,20 +80,20 @@ export default function AdminPanel() {
   if (!loaded) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <p className="text-[var(--muted)]">Se încarcă…</p>
+        <p className="text-(--muted)">Se încarcă…</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[var(--bg)] px-6 py-12">
+    <div className="min-h-screen bg-(--bg) px-6 py-12">
       <div className="mx-auto max-w-2xl">
 
         {/* Header */}
         <div className="flex items-center justify-between mb-10">
-          <h1 className="text-2xl font-semibold">Chacón Villa — Rezervări</h1>
+          <h1 className="text-2xl font-semibold">Ebro Relax Homes — Rezervări</h1>
           <div className="text-sm">
-            {saving && <span className="text-[var(--muted)]">Se salvează…</span>}
+            {saving && <span className="text-(--muted)">Se salvează…</span>}
             {saveStatus === "saved" && <span className="text-green-600">Salvat ✓</span>}
             {saveStatus === "error" && <span className="text-red-500">Eroare — încearcă din nou</span>}
           </div>
@@ -108,15 +108,15 @@ export default function AdminPanel() {
             return (
               <div
                 key={key}
-                className="rounded-2xl border border-[var(--border)] bg-[var(--bg-2)] p-6 md:p-8"
+                className="rounded-2xl border border-(--border) bg-(--bg-2) p-6 md:p-8"
               >
                 <h2 className="text-xl font-semibold mb-1">{label}</h2>
-                <p className="text-sm text-[var(--muted)] mb-6">{cap}</p>
+                <p className="text-sm text-(--muted) mb-6">{cap}</p>
 
                 {/* Current bookings */}
                 <p className="text-sm font-medium mb-3">Rezervări active</p>
                 {bookings[key].length === 0 ? (
-                  <p className="text-sm text-[var(--muted)] italic mb-6">
+                  <p className="text-sm text-(--muted) italic mb-6">
                     Nicio rezervare adăugată.
                   </p>
                 ) : (
@@ -124,7 +124,7 @@ export default function AdminPanel() {
                     {bookings[key].map((b, i) => (
                       <li
                         key={i}
-                        className="flex items-center justify-between rounded-xl border border-[var(--border)] bg-[var(--bg)] px-4 py-3"
+                        className="flex items-center justify-between rounded-xl border border-(--border) bg-(--bg) px-4 py-3"
                       >
                         <span className="text-sm font-medium">
                           {formatDisplay(b.from)} → {formatDisplay(b.to)}
@@ -144,7 +144,7 @@ export default function AdminPanel() {
                 <p className="text-sm font-medium mb-3">Adaugă rezervare nouă</p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <div className="flex-1">
-                    <label className="block text-xs text-[var(--muted)] mb-1">
+                    <label className="block text-xs text-(--muted) mb-1">
                       De la
                     </label>
                     <input
@@ -156,11 +156,11 @@ export default function AdminPanel() {
                           [key]: { ...f[key], from: e.target.value },
                         }))
                       }
-                      className="w-full rounded-xl border border-[var(--border)] bg-[var(--bg)] px-4 py-3 outline-none focus:ring-2 focus:ring-[var(--accent)]"
+                      className="w-full rounded-xl border border-(--border) bg-(--bg) px-4 py-3 outline-none focus:ring-2 focus:ring-(--accent)"
                     />
                   </div>
                   <div className="flex-1">
-                    <label className="block text-xs text-[var(--muted)] mb-1">
+                    <label className="block text-xs text-(--muted) mb-1">
                       Până la
                     </label>
                     <input
@@ -173,14 +173,14 @@ export default function AdminPanel() {
                           [key]: { ...f[key], to: e.target.value },
                         }))
                       }
-                      className="w-full rounded-xl border border-[var(--border)] bg-[var(--bg)] px-4 py-3 outline-none focus:ring-2 focus:ring-[var(--accent)]"
+                      className="w-full rounded-xl border border-(--border) bg-(--bg) px-4 py-3 outline-none focus:ring-2 focus:ring-(--accent)"
                     />
                   </div>
                   <div className="flex items-end">
                     <button
                       onClick={() => addBooking(key)}
                       disabled={!from || !to || !!dateError}
-                      className="w-full sm:w-auto px-5 py-3 rounded-full bg-[var(--accent)] text-white font-semibold hover:brightness-110 transition disabled:opacity-40 disabled:cursor-not-allowed"
+                      className="w-full sm:w-auto px-5 py-3 rounded-full bg-(--accent) text-white font-semibold hover:brightness-110 transition disabled:opacity-40 disabled:cursor-not-allowed"
                     >
                       Adaugă
                     </button>
@@ -196,7 +196,7 @@ export default function AdminPanel() {
           })}
         </div>
 
-        <p className="text-center text-xs text-[var(--muted)] mt-12">
+        <p className="text-center text-xs text-(--muted) mt-12">
           Modificările se salvează automat și apar imediat pe site.
         </p>
       </div>
