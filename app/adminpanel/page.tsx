@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 type BookingRange = { from: string; to: string };
 type BookingData = { small: BookingRange[]; large: BookingRange[] };
 type House = "small" | "large";
+type VisitorStats = { today: number; yesterday: number };
 
 const HOUSES: { key: House; label: string; cap: string }[] = [
   { key: "small", label: "Casa mică", cap: "până la 4 persoane" },
@@ -25,6 +26,7 @@ export default function AdminPanel() {
     small: { from: "", to: "" },
     large: { from: "", to: "" },
   });
+  const [visitors, setVisitors] = useState<VisitorStats | null>(null);
 
   useEffect(() => {
     fetch("/api/bookings")
@@ -34,6 +36,11 @@ export default function AdminPanel() {
         setLoaded(true);
       })
       .catch(() => setLoaded(true));
+
+    fetch("/api/visitors")
+      .then((r) => r.json())
+      .then((data) => setVisitors(data))
+      .catch(() => {});
   }, []);
 
   async function persist(data: BookingData) {
@@ -90,12 +97,29 @@ export default function AdminPanel() {
       <div className="mx-auto max-w-2xl">
 
         {/* Header */}
-        <div className="flex items-center justify-between mb-10">
+        <div className="flex items-center justify-between mb-6">
           <h1 className="text-2xl font-semibold">Ebro Relax Homes — Rezervări</h1>
           <div className="text-sm">
             {saving && <span className="text-(--muted)">Se salvează…</span>}
             {saveStatus === "saved" && <span className="text-green-600">Salvat ✓</span>}
             {saveStatus === "error" && <span className="text-red-500">Eroare — încearcă din nou</span>}
+          </div>
+        </div>
+
+        {/* Visitor counter */}
+        <div className="rounded-2xl border border-(--border) bg-(--bg-2) px-6 py-4 mb-10 flex items-center gap-8">
+          <div>
+            <p className="text-xs text-(--muted) mb-0.5">Vizite azi</p>
+            <p className="text-2xl font-bold">
+              {visitors === null ? "…" : visitors.today}
+            </p>
+          </div>
+          <div className="w-px h-8 bg-(--border)" />
+          <div>
+            <p className="text-xs text-(--muted) mb-0.5">Ieri</p>
+            <p className="text-2xl font-bold text-(--muted)">
+              {visitors === null ? "…" : visitors.yesterday}
+            </p>
           </div>
         </div>
 

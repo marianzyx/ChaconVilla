@@ -26,3 +26,41 @@ export async function saveBookings(data: BookingData): Promise<void> {
   const store = await kv();
   await store.set(KV_KEY, data);
 }
+
+// --- Visitor tracking ---
+
+function todayKey(): string {
+  return `chaconvilla_visitors_${new Date().toISOString().slice(0, 10)}`;
+}
+
+export async function incrementVisitors(): Promise<void> {
+  if (!process.env.KV_REST_API_URL) return;
+  try {
+    const store = await kv();
+    const key = todayKey();
+    await store.incr(key);
+    await store.expire(key, 60 * 60 * 24 * 30);
+  } catch {
+    // silently ignore tracking errors
+  }
+}
+
+export async function getVisitorStats(): Promise<{ today: number; yesterday: number }> {
+  if (!process.env.KV_REST_API_URL) return { today: 0, yesterday: 0 };
+  try {
+    const store = await kv();
+    const now = new Date();
+    const todayStr = now.toISOString().slice(0, 10);
+    const yest = new Date(now);
+    yest.setDate(yest.getDate() - 1);
+    const yesterdayStr = yest.toISOString().slice(0, 10);
+
+    const [t, y] = await Promise.all([
+      store.get<number>(`chaconvilla_visitors_${todayStr}`),
+      store.get<number>(`chaconvilla_visitors_${yesterdayStr}`),
+    ]);
+    return { today: t ?? 0, yesterday: y ?? 0 };
+  } catch {
+    return { today: 0, yesterday: 0 };
+  }
+}

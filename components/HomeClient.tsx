@@ -4,7 +4,7 @@ import Image from "next/image";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { LanguageProvider, useLanguage } from "./LanguageProvider";
-import {useState} from "react";
+import { useState, useEffect } from "react";
 import HousePhotosModal from "./HousePhotosModal";
 import AvailabilityCalendar from "./AvailabilityCalendar";
 
@@ -12,7 +12,11 @@ import AvailabilityCalendar from "./AvailabilityCalendar";
 function HomeContent() {
   const { t } = useLanguage();
   const [openSmall, setOpenSmall] = useState(false);
-const [openLarge, setOpenLarge] = useState(false);
+  const [openLarge, setOpenLarge] = useState(false);
+
+  useEffect(() => {
+    fetch("/api/visitors", { method: "POST" });
+  }, []);
 
 // Placeholder images (you will replace them later)
 const smallInteriorImages = [
