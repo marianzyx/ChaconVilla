@@ -15,7 +15,12 @@ function HomeContent() {
   const [openLarge, setOpenLarge] = useState(false);
 
   useEffect(() => {
-    fetch("/api/visitors", { method: "POST" });
+    const today = new Date().toISOString().slice(0, 10);
+    const key = `visited_${today}`;
+    if (!localStorage.getItem(key)) {
+      fetch("/api/visitors", { method: "POST" });
+      localStorage.setItem(key, "1");
+    }
   }, []);
 
 // Placeholder images (you will replace them later)
