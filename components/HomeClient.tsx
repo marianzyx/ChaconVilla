@@ -228,7 +228,7 @@ const largeInteriorImages = [
                 <div className="text-right">
                   <p className="text-sm text-[var(--muted)]">{t.pricing.standard}</p>
                   <p className="text-4xl font-semibold">
-                    €110{" "}
+                    €130{" "}
                     <span className="text-base font-normal text-[var(--muted)]">
                       {t.pricing.perNight}
                     </span>
@@ -278,7 +278,7 @@ const largeInteriorImages = [
                 <div className="text-right">
                   <p className="text-sm text-[var(--muted)]">{t.pricing.standard}</p>
                   <p className="text-4xl font-semibold">
-                    €130{" "}
+                    €150{" "}
                     <span className="text-base font-normal text-[var(--muted)]">
                       {t.pricing.perNight}
                     </span>
